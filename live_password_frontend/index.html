@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./streamlit-component-lib.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<div class="password-wrapper">
+
+    <div class="password-container">
+
+        <input
+            id="password_input"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Type password"
+        >
+
+        <button
+            id="eye_button"
+            type="button"
+            aria-label="Show password"
+        >
+            👁
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const input = document.getElementById("password_input");
+
+const eye = document.getElementById("eye_button");
+
+
+// ------------------------------------------------------------
+// LIVE PASSWORD TYPING
+// ------------------------------------------------------------
+
+input.addEventListener("input", function() {
+
+    Streamlit.setComponentValue(input.value);
+
+});
+
+
+// ------------------------------------------------------------
+// PERMANENT EYE BUTTON
+// ------------------------------------------------------------
+
+eye.addEventListener("click", function() {
+
+    if (input.type === "password") {
+
+        input.type = "text";
+
+        eye.innerHTML = "👁";
+
+        eye.setAttribute(
+            "aria-label",
+            "Hide password"
+        );
+
+    } else {
+
+        input.type = "password";
+
+        eye.innerHTML = "👁";
+
+        eye.setAttribute(
+            "aria-label",
+            "Show password"
+        );
+
+    }
+
+    input.focus();
+
+});
+
+
+// ------------------------------------------------------------
+// STREAMLIT READY
+// ------------------------------------------------------------
+
+Streamlit.setComponentReady();
+
+Streamlit.setFrameHeight(55);
+
+</script>
+
+</body>
+</html>
