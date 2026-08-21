@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    font-family: sans-serif;
+}
+
+.password-wrapper {
+    width: 100%;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+#password_input {
+    width: 100%;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    padding: 0 48px 0 14px;
+
+    border: 1px solid rgba(128, 128, 128, 0.25);
+
+    border-radius: 7px;
+
+    background: #f0f2f6;
+
+    color: #111111;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#password_input:focus {
+    border: 1px solid #ff2b2b;
+
+    box-shadow: 0 0 0 1px #ff2b2b;
+}
+
+#password_input::placeholder {
+    color: #777777;
+}
+
+#eye_button {
+    position: absolute;
+
+    right: 8px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#eye_button:hover {
+    background: rgba(128, 128, 128, 0.10);
+
+    border-radius: 5px;
+}
